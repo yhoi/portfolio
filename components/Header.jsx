@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Box, Heading, IconButton } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 
 const Header = () => {
@@ -16,7 +16,9 @@ const Header = () => {
     >
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg">
-          My Portfolio
+          <Link href="/">
+            Yama Blog
+          </Link>
         </Heading>
       </Flex>
 
@@ -31,62 +33,29 @@ const Header = () => {
 
       <Box
         display={{ base: "none", md: "flex" }}
-        width={{ base: "full", md: "auto" }}
+        mt={{ base: 4, md: 0 }}
         alignItems="center"
-        flexGrow={1}
       >
-        <Box pr={4}>
-          <Heading as="h2" size="md">
-            About
-          </Heading>
-        </Box>
-        <Box pr={4}>
-        <Heading as="h2" size="md">
-        Skills
-      </Heading>
-    </Box>
-    <Box pr={4}>
-      <Heading as="h2" size="md">
-        Projects
-      </Heading>
-    </Box>
-    <Box pr={4}>
-      <Heading as="h2" size="md">
-        Contact
-      </Heading>
-    </Box>
-  </Box>
-
-  <Box
-    display={{ base: "none", md: "flex" }}
-    mt={{ base: 4, md: 0 }}
-    alignItems="center"
-  >
-    <Link href="https://github.com/yhoi">
-      <IconButton
-        aria-label="Github"
-        size="lg"
-        variant="ghost"
-        color="white"
-        icon={<FaGithub />}
-      />
-    </Link>
-    <IconButton
-      aria-label="LinkedIn"
-      size="lg"
-      variant="ghost"
-      color="white"
-      icon={<FaLinkedin />}
-    />
-    <IconButton
-      aria-label="Email"
-      size="lg"
-      variant="ghost"
-      color="white"
-      icon={<FaEnvelope />}
-    />
-  </Box>
-</Flex>
-  )};
+        <Link href="https://github.com/yhoi">
+          <IconButton
+            aria-label="Github"
+            size="lg"
+            variant="ghost"
+            color="white"
+            icon={<FaGithub />}
+          />
+        </Link>
+        <Link href="https://twitter.com/yuya__yamashita">
+          <IconButton
+            aria-label="LinkedIn"
+            size="lg"
+            variant="ghost"
+            color="white"
+            icon={<FaTwitter />}
+          />
+        </Link>
+      </Box>
+    </Flex>
+)};
 
 export default Header;
